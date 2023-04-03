@@ -40,7 +40,7 @@ export async function POST(request: Request) {
     });
     console.log("Data sent");
   } catch (error) {
-    console.log(error);
+    console.log("An error occurred", error);
   }
 
   return new Response("Document added");

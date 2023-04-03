@@ -10,7 +10,6 @@ export async function GET(request: Request) {
 
   const querySnapshot = await getDocs(collection(db, "images"));
   querySnapshot.forEach(doc => {
-    // doc.data() is never undefined for query doc snapshots
     data.push(doc.data());
   });
 
