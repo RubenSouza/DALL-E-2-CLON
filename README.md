@@ -1,11 +1,11 @@
-<img src = "https://firebasestorage.googleapis.com/v0/b/dall-e-2-clon.appspot.com/o/images%2FDALL-E-2%20CLON.png?alt=media&token=edde4719-a5e1-4671-b122-dbda487a8992" width="1080px">
+<!-- <img src = "https://firebasestorage.googleapis.com/v0/b/dall-e-2-clon.appspot.com/o/images%2FDALL-E-2%20CLON.png?alt=media&token=edde4719-a5e1-4671-b122-dbda487a8992" width="1080px">
 
 # 💻 DALL-E-2 CLON
 
 <p>O objetivo deste projeto é criar um clone do DALL-E-2, uma inteligência artificial da OpenAI que cria imagens a partir de descrições em texto, utilizando tecnologias modernas de desenvolvimento web. O clone criado neste projeto será capaz de gerar imagens a partir de descrições em texto, com a ajuda das APIs do Chat GPT e do DALL-E-2.
 </p>
 
-<h4 align="center"> 
+<h4 align="center">
 	🚧  Next JS  🚀 Concluído...  🚧
 </h4>
 
@@ -37,4 +37,4 @@ Antes de iniciar o desenvolvimento, é necessário ter as seguintes ferramentas 
 
 - Node.js
 - NPM ou Yarn
-- Firebase CLI
+- Firebase CLI -->

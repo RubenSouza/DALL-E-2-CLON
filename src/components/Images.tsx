@@ -25,7 +25,9 @@ const Images = (props: Props) => {
 
   console.log(imagesData);
 
-  if (isLoading) {
+  let loading = isLoading || isValidating;
+
+  if (loading) {
     return (
       <Loader title={"Loading Images"} type={"spinningBubbles"} color={""} />
     );
