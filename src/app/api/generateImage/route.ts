@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseURL = "https://api.openai.com/v1/";
-const apiKey = process.env.OPEN_AI_KEY;
+const apiKey = process.env.NEXT_PUBLIC_OPEN_AI_KEY;
 
 // mongoose.connect(mongoUrl, { useNewUrlParser: true } as ConnectOptions);
 

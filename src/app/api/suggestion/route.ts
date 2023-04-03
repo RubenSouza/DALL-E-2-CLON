@@ -2,7 +2,7 @@ import axios from "axios";
 
 const baseURL = "https://api.openai.com/v1/";
 const model = "text-davinci-003";
-const apiKey = process.env.OPEN_AI_KEY;
+const apiKey = process.env.NEXT_PUBLIC_OPEN_AI_KEY;
 
 export async function GET(request: Request) {
   const response = await axios.post(
