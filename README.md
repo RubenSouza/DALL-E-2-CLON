@@ -1,38 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src = "https://firebasestorage.googleapis.com/v0/b/dall-e-2-clon.appspot.com/o/images%2FDALL-E-2%20CLON.png?alt=media&token=edde4719-a5e1-4671-b122-dbda487a8992" width="1080px">
 
-## Getting Started
+# 💻 DALL-E-2 CLON
 
-First, run the development server:
+<p>O objetivo deste projeto é criar um clone do DALL-E-2, uma inteligência artificial da OpenAI que cria imagens a partir de descrições em texto, utilizando tecnologias modernas de desenvolvimento web. O clone criado neste projeto será capaz de gerar imagens a partir de descrições em texto, com a ajuda das APIs do Chat GPT e do DALL-E-2.
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<h4 align="center"> 
+	🚧  Next JS  🚀 Concluído...  🚧
+</h4>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Preview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<p>
+    Se no momento atual o meu deploy na vercel não está gerando imagens, significa que acabou o período de testes da OPEN AI API, nesse caso você terá que rodar o projeto localmente utilizando suas chaves seguindo o tutorial abaixo.
+</p>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### [<img src="https://img.shields.io/static/v1?label=acessar preview&message=Vercel&color=7159c1&style=for-the-badge&logo=ghost"/>](https://my-portfolio-nine-zeta-94.vercel.app/#hero)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Tecnologias
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- NextJS
+- Typescript
+- JSX
+- Tailwind CSS
+- Yarn - Package Manager
+- React-hot-toas
+- Firebase Firestore
+- Firebase Storage
+- Axios
+- Chat GPT API
+- DALL-E-2 API
 
-## Learn More
+## Pré-requisitos
 
-To learn more about Next.js, take a look at the following resources:
+Antes de iniciar o desenvolvimento, é necessário ter as seguintes ferramentas instaladas:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Node.js
+- NPM ou Yarn
+- Firebase CLI
