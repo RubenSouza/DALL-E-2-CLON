@@ -36,12 +36,15 @@ const Header = (props: Props) => {
        text-gray-400"
       >
         <Link
-          href={""}
+          href={"https://my-portfolio-rubensouza.vercel.app"}
           className="px-3 font-light text-right hover:text-gray-200"
         >
           My Portfolio
         </Link>
-        <Link href={""} className="px-3 font-light hover:text-gray-200">
+        <Link
+          href={"https://github.com/RubenSouza/DALL-E-2-CLON"}
+          className="px-3 font-light hover:text-gray-200"
+        >
           Github Repo
         </Link>
       </div>
