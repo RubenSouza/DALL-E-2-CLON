@@ -23,13 +23,13 @@ const PromptInput = (props: Props) => {
     revalidateOnFocus: false,
   });
 
-  // const { mutate: updateImages } = useSWR(
-  //   "/api/getFirebase",
-  //   fetchImagesFromFirebase,
-  //   {
-  //     revalidateOnFocus: false,
-  //   }
-  // );
+  const { mutate: updateImages } = useSWR(
+    "/api/getFirebase",
+    fetchImagesFromFirebase,
+    {
+      revalidateOnFocus: false,
+    }
+  );
 
   const submitPrompt = async () => {
     const notificationPrompt = input;
@@ -58,7 +58,7 @@ const PromptInput = (props: Props) => {
       });
     }
 
-    // updateImages();
+    updateImages();
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {

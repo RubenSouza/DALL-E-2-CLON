@@ -17,6 +17,7 @@ export async function GET(request: Request) {
     {
       headers: {
         Authorization: `Bearer ${apiKey}`,
+        "Cache-Control": "no-cache",
       },
     }
   );
