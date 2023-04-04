@@ -2,8 +2,10 @@ import axios from "axios";
 
 export async function fetchSuggestionFromChatGPT() {
   const response = await fetch("/api/suggestion", {
+    method: "GET",
     headers: {
       cache: "no-cache",
+      "Cache-Control": "no-cache",
     },
   });
 

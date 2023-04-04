@@ -23,6 +23,9 @@ const PromptInput = (props: Props) => {
     revalidateOnFocus: false,
   });
 
+  console.log(suggestion);
+  console.log(typeof suggestion);
+
   const { mutate: updateImages } = useSWR(
     "/api/getFirebase",
     fetchImagesFromFirebase,
@@ -67,6 +70,10 @@ const PromptInput = (props: Props) => {
     await submitPrompt();
   };
 
+  const updateMensages = () => {
+    mutate();
+  };
+
   let loading = isLoading || isValidating;
 
   return (
@@ -100,7 +107,7 @@ const PromptInput = (props: Props) => {
       {input && (
         <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 space-x-4 pt-6 items-center">
           <p
-            onClick={() => setInput(suggestion)}
+            onClick={() => setInput(suggestion as string)}
             className=" italic font-light cursor-pointer"
           >
             Suggestion:{" "}
@@ -111,7 +118,7 @@ const PromptInput = (props: Props) => {
           <button
             className="p-2 bg-[#363535]  text-[#E8E9EB] border-none text-sm
             transition-colors duration-200 rounded-md font-bold cursor-pointer"
-            onClick={mutate}
+            onClick={updateMensages}
           >
             New Suggestion
           </button>
