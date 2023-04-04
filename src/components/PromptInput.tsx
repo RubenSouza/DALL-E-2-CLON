@@ -24,7 +24,6 @@ const PromptInput = (props: Props) => {
   });
 
   console.log(suggestion);
-  console.log(typeof suggestion);
 
   const { mutate: updateImages } = useSWR(
     "/api/getFirebase",
