@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import useSWR from "swr";
 import Loader from "./Loader";
 import { fetchImagesFromFirebase } from "@/lib/fetchImagesFromFirebase";
+import axios from "axios";
+import { NextPageContext } from "next";
 
 type ImageType = {
   image: string;
@@ -15,25 +17,44 @@ type ImageType = {
 type Props = {};
 
 const Images = (props: Props) => {
-  const {
-    data: imagesData,
-    error,
-    isLoading,
-    mutate,
-    isValidating,
-  } = useSWR("/api/getFirebase", fetchImagesFromFirebase, {
-    revalidateOnFocus: false,
-  });
+  // const {
+  //   data: imagesData,
+  //   error,
+  //   isLoading,
+  //   mutate,
+  //   isValidating,
+  // } = useSWR("/api/getFirebase", fetchImagesFromFirebase, {
+  //   revalidateOnFocus: false,
+  // });
 
-  console.log(imagesData);
+  const [imagesData, setImagesData] = React.useState<ImageType[]>([]);
 
-  let loading = isLoading || isValidating;
+  useEffect(() => {
+    axios.get("/api/getFirebase").then(res => {
+      let data = res.data;
 
-  if (loading) {
-    return (
-      <Loader title={"Loading Images"} type={"spinningBubbles"} color={""} />
-    );
-  }
+      let listaDeObjetos = data;
+      listaDeObjetos.sort((a: any, b: any) => {
+        if (a.name > b.name) {
+          return -1;
+        } else if (a.name < b.name) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+
+      setImagesData(listaDeObjetos);
+    });
+  }, []);
+
+  // let loading = isLoading || isValidating;
+
+  // if (loading) {
+  //   return (
+  //     <Loader title={"Loading Images"} type={"spinningBubbles"} color={""} />
+  //   );
+  // }
 
   return (
     <div className="">
