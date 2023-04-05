@@ -1,7 +1,5 @@
 "use client";
 
-// import axios from "axios";
-
 const baseURL = "https://api.openai.com/v1";
 const model = "text-davinci-003";
 const apiKey = process.env.NEXT_PUBLIC_OPEN_AI_KEY;
@@ -31,17 +29,3 @@ export async function fetchSuggestionFromChatGPT() {
   console.log(textData);
   return textData;
 }
-
-// export async function fetchSuggestionFromChatGPT() {
-//   const response = await fetch("/api/suggestion", {
-//     method: "GET",
-//     headers: {
-//       cache: "no-cache",
-//       "Cache-Control": "no-cache",
-//     },
-//   });
-
-//   let data = await response.text();
-
-//   return data;
-// }

@@ -12,7 +12,6 @@ type Props = {};
 
 const PromptInput = (props: Props) => {
   const [input, setInput] = useState<string>("");
-  // const [suggestion, setSuggestion] = useState<string>("");
 
   const {
     data: suggestion,
@@ -23,26 +22,6 @@ const PromptInput = (props: Props) => {
   } = useSWR("/api/suggestion", fetchSuggestionFromChatGPT, {
     revalidateOnFocus: false,
   });
-
-  // console.log(suggestion);
-
-  // useEffect(() => {
-  //   const fetchSuggestion = async () => {
-  //     const response = await fetch("/api/suggestion", {
-  //       method: "GET",
-  //       headers: {
-  //         cache: "no-cache",
-  //         "Cache-Control": "no-cache",
-  //       },
-  //     });
-
-  //     let data = await response.text();
-
-  //     setSuggestion(data);
-  //   };
-
-  //   fetchSuggestion();
-  // }, []);
 
   const { mutate: updateImages } = useSWR(
     "/api/getFirebase",
@@ -79,7 +58,7 @@ const PromptInput = (props: Props) => {
       });
     }
 
-    // updateImages();
+    updateImages();
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -88,21 +67,20 @@ const PromptInput = (props: Props) => {
     await submitPrompt();
   };
 
-  // const updateMensages = () => {
-  //   mutate();
-  // };
+  const updateMensages = () => {
+    mutate();
+  };
 
-  // let loading = isLoading || isValidating;
+  let loading = isLoading || isValidating;
 
   return (
     <div className="lg:mx-64 m-20 text-gray-200">
       <form className="flex flex-col lg:flex-row" onSubmit={handleSubmit}>
         <textarea
           placeholder={
-            // (loading && "ChatGPT is Thinking...") ||
-            // suggestion ||
-            // "Enter your prompt here"
-            suggestion
+            (loading && "ChatGPT is Thinking...") ||
+            suggestion ||
+            "Enter your prompt here"
           }
           value={input}
           onChange={e => setInput(e.target.value)}
@@ -131,14 +109,13 @@ const PromptInput = (props: Props) => {
           >
             Suggestion:{" "}
             <span className="text-violet-500">
-              {/* {loading ? "ChatGPT is Thinking..." : suggestion} */}
-              {suggestion}
+              {loading ? "ChatGPT is Thinking..." : suggestion}
             </span>
           </p>
           <button
             className="p-2 bg-[#363535]  text-[#E8E9EB] border-none text-sm
             transition-colors duration-200 rounded-md font-bold cursor-pointer"
-            // onClick={updateMensages}
+            onClick={updateMensages}
           >
             New Suggestion
           </button>

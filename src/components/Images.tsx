@@ -17,52 +17,54 @@ type ImageType = {
 type Props = {};
 
 const Images = (props: Props) => {
-  const [imagesData, setImagesData] = React.useState<ImageType[]>([]);
+  // const [imagesData, setImagesData] = React.useState<ImageType[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/getFirebase", {
-        method: "GET",
-        headers: {
-          cache: "no-cache",
-          "Cache-Control": "no-cache",
-        },
-      });
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await fetch("/api/getFirebase", {
+  //       method: "GET",
+  //       headers: {
+  //         cache: "no-cache",
+  //         "Cache-Control": "no-cache",
+  //       },
+  //     });
 
-      let data = await response.json();
+  //     let data = await response.json();
 
-      let listaDeObjetos = data;
-      listaDeObjetos.sort((a: any, b: any) => {
-        if (a.name > b.name) {
-          return -1;
-        } else if (a.name < b.name) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
-      setImagesData(listaDeObjetos);
-    };
-    fetchData();
-  }, []);
+  //     let listaDeObjetos = data;
+  //     listaDeObjetos.sort((a: any, b: any) => {
+  //       if (a.name > b.name) {
+  //         return -1;
+  //       } else if (a.name < b.name) {
+  //         return 1;
+  //       } else {
+  //         return 0;
+  //       }
+  //     });
+  //     setImagesData(listaDeObjetos);
+  //   };
+  //   fetchData();
+  // }, []);
 
-  // const {
-  //   data: imagesData,
-  //   error,
-  //   isLoading,
-  //   mutate,
-  //   isValidating,
-  // } = useSWR("/api/getFirebase", fetchImagesFromFirebase, {
-  //   revalidateOnFocus: false,
-  // });
+  const {
+    data: imagesData,
+    error,
+    isLoading,
+    mutate,
+    isValidating,
+  } = useSWR("/api/getFirebase", fetchImagesFromFirebase, {
+    revalidateOnFocus: false,
+  });
 
-  // let loading = isLoading || isValidating;
+  console.log(imagesData);
 
-  // if (loading) {
-  //   return (
-  //     <Loader title={"Loading Images"} type={"spinningBubbles"} color={""} />
-  //   );
-  // }
+  let loading = isLoading || isValidating;
+
+  if (loading) {
+    return (
+      <Loader title={"Loading Images"} type={"spinningBubbles"} color={""} />
+    );
+  }
 
   return (
     <div className="">
