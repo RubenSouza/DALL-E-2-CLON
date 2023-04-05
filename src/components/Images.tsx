@@ -94,7 +94,7 @@ const Images = (props: Props) => {
               src={`${item?.image}`}
               width={800}
               height={800}
-              priority={true}
+              // priority={true}
               alt="image from DALL-E-2"
               key={item?.name}
               className="w-full rounded-sm shadow-2xl drop-shadow-lg -z-20"
