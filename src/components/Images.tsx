@@ -5,8 +5,6 @@ import Image from "next/image";
 import useSWR from "swr";
 import Loader from "./Loader";
 import { fetchImagesFromFirebase } from "@/lib/fetchImagesFromFirebase";
-import axios from "axios";
-import { NextPageContext } from "next";
 
 type ImageType = {
   image: string;
@@ -17,35 +15,6 @@ type ImageType = {
 type Props = {};
 
 const Images = (props: Props) => {
-  // const [imagesData, setImagesData] = React.useState<ImageType[]>([]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await fetch("/api/getFirebase", {
-  //       method: "GET",
-  //       headers: {
-  //         cache: "no-cache",
-  //         "Cache-Control": "no-cache",
-  //       },
-  //     });
-
-  //     let data = await response.json();
-
-  //     let listaDeObjetos = data;
-  //     listaDeObjetos.sort((a: any, b: any) => {
-  //       if (a.name > b.name) {
-  //         return -1;
-  //       } else if (a.name < b.name) {
-  //         return 1;
-  //       } else {
-  //         return 0;
-  //       }
-  //     });
-  //     setImagesData(listaDeObjetos);
-  //   };
-  //   fetchData();
-  // }, []);
-
   const {
     data: imagesData,
     error,
