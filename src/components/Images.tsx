@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useEffect } from "react";
-// import Image from "next/image";
-// import useSWR from "swr";
-// import Loader from "./Loader";
-// import { fetchImagesFromFirebase } from "@/lib/fetchImagesFromFirebase";
-// import axios from "axios";
-// import { NextPageContext } from "next";
+import Image from "next/image";
+import useSWR from "swr";
+import Loader from "./Loader";
+import { fetchImagesFromFirebase } from "@/lib/fetchImagesFromFirebase";
+import axios from "axios";
+import { NextPageContext } from "next";
 
 type ImageType = {
   image: string;
@@ -90,11 +90,11 @@ const Images = (props: Props) => {
               </p>
             </div>
 
-            <img
+            <Image
               src={`${item?.image}`}
               width={800}
               height={800}
-              // priority={true}
+              priority={true}
               alt="image from DALL-E-2"
               key={item?.name}
               className="w-full rounded-sm shadow-2xl drop-shadow-lg -z-20"

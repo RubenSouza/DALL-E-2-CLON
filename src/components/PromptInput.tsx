@@ -12,45 +12,45 @@ type Props = {};
 
 const PromptInput = (props: Props) => {
   const [input, setInput] = useState<string>("");
-  const [suggestion, setSuggestion] = useState<string>("");
+  // const [suggestion, setSuggestion] = useState<string>("");
 
-  // const {
-  //   data: suggestion,
-  //   error,
-  //   isLoading,
-  //   mutate,
-  //   isValidating,
-  // } = useSWR("/api/suggestion", fetchSuggestionFromChatGPT, {
-  //   revalidateOnFocus: false,
-  // });
+  const {
+    data: suggestion,
+    error,
+    isLoading,
+    mutate,
+    isValidating,
+  } = useSWR("/api/suggestion", fetchSuggestionFromChatGPT, {
+    revalidateOnFocus: false,
+  });
 
   // console.log(suggestion);
 
-  useEffect(() => {
-    const fetchSuggestion = async () => {
-      const response = await fetch("/api/suggestion", {
-        method: "GET",
-        headers: {
-          cache: "no-cache",
-          "Cache-Control": "no-cache",
-        },
-      });
+  // useEffect(() => {
+  //   const fetchSuggestion = async () => {
+  //     const response = await fetch("/api/suggestion", {
+  //       method: "GET",
+  //       headers: {
+  //         cache: "no-cache",
+  //         "Cache-Control": "no-cache",
+  //       },
+  //     });
 
-      let data = await response.text();
+  //     let data = await response.text();
 
-      setSuggestion(data);
-    };
+  //     setSuggestion(data);
+  //   };
 
-    fetchSuggestion();
-  }, []);
+  //   fetchSuggestion();
+  // }, []);
 
-  // const { mutate: updateImages } = useSWR(
-  //   "/api/getFirebase",
-  //   fetchImagesFromFirebase,
-  //   {
-  //     revalidateOnFocus: false,
-  //   }
-  // );
+  const { mutate: updateImages } = useSWR(
+    "/api/getFirebase",
+    fetchImagesFromFirebase,
+    {
+      revalidateOnFocus: false,
+    }
+  );
 
   const submitPrompt = async () => {
     const notificationPrompt = input;
