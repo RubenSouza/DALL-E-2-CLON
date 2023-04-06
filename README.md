@@ -23,15 +23,18 @@
 
 ## 🛠 Tecnologias
 
+- React
 - NextJS
 - Typescript
 - JSX
 - Tailwind CSS
 - Yarn - Package Manager
-- React-hot-toas
+- React-hot-toast
 - Firebase Firestore
 - Firebase Storage
-- Axios
+- Fetch
+- OPEN AI
+- SWR
 - Chat GPT API
 - DALL-E-2 API
 
