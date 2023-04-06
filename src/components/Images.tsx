@@ -5,6 +5,7 @@ import Image from "next/image";
 import useSWR from "swr";
 import Loader from "./Loader";
 import { fetchImagesFromFirebase } from "@/lib/fetchImagesFromFirebase";
+import Link from "next/link";
 
 type ImageType = {
   image: string;
@@ -54,11 +55,16 @@ const Images = (props: Props) => {
             <div
               className="absolute flex justify-center items-center 
         w-full h-full bg-white opacity-0 hover:opacity-80 transition-opacity
-        duration-200 z-10"
+        duration-200 z-10 flex-col"
             >
-              <p className="text-lg text-center font-light p-5">
+              <p className="text-base text-center font-normal p-5">
                 {item?.inputText}
               </p>
+              <Link href={item?.image} className="absolute bottom-7">
+                <p className="text-base text-center font-light ">
+                  Download image
+                </p>
+              </Link>
             </div>
 
             <Image
