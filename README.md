@@ -14,10 +14,10 @@
 ## 🎨 Preview
 
 <p>
-    Se no momento atual o meu deploy na vercel não está gerando imagens, significa que acabou o período de testes da OPEN AI API, nesse caso, você terá que rodar o projeto localmente utilizando suas chaves seguindo os passos descritos logo abaixo.
+    Se no momento atual o meu deploy na vercel não está gerando imagens, significa que acabou o meu período de testes da OPEN AI API, nesse caso, você terá que rodar o projeto localmente seguindo os passos descritos logo abaixo.
 </p>
 
-### [<img src="https://img.shields.io/static/v1?label=acessar preview&message=Vercel&color=7159c1&style=for-the-badge&logo=ghost"/>](https://my-portfolio-nine-zeta-94.vercel.app/#hero)
+### [<img src="https://img.shields.io/static/v1?label=acessar preview&message=Vercel&color=7159c1&style=for-the-badge&logo=ghost"/>](https://dall-e-2-clon.vercel.app)
 
 ---
 
